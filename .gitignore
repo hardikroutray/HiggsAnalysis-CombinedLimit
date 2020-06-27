@@ -1,1 +1,6 @@
 site
+*.root
+*.txt
+*.py~
+*.csv
+*.out
