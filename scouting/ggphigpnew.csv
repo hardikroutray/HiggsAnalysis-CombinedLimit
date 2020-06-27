@@ -1,6 +1,2 @@
  mass	lxy bin	gp_kernel_param 	sqrt(sum signalpull**2)	sqrt(sum fiterr**2)	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
  2	1.0 - 3.0	534**2 * RBF(length_scale=1.31)	4.06728535738	50.7283760767	1.6641	1.1967	2.3274	0.897	3.1066	1.3763
- mass	lxy bin	gp_kernel_param 	sqrt(sum signalpull**2)	sqrt(sum fiterr**2)	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
- 2	1.0 - 3.0	534**2 * RBF(length_scale=1.31)	4.06728535738	50.7283760767	1.6641	1.1967	2.3274	0.897	3.1066	1.3763
- mass	lxy bin	gp_kernel_param 	sqrt(sum signalpull**2)	sqrt(sum fiterr**2)	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
- 2	1.0 - 3.0	534**2 * RBF(length_scale=1.31)	4.06728535738	50.7283760767	1.6641	1.1967	2.3274	0.897	3.1066	1.3763

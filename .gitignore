@@ -1,7 +1,6 @@
 site
 *.root
 *.txt
-*.py~
-*.csv
 *.out
 *.png
+*.py~
