@@ -1,0 +1,4 @@
+ mass	lxy bin	poly order	chi2	ndof	sqrt(sum signalpull**2)	sqrt(sum fiterr**2)	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ 2	1.0 - 3.0	6	0	0	4.06727254183	42.786864496	1.6797	1.2018	2.3358	0.9055	3.1262	1.0709
+ mass	lxy bin	poly order	chi2	ndof	sqrt(sum signalpull**2)	sqrt(sum fiterr**2)	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ 2	1.0 - 3.0	6	0	0	4.06727254183	42.786864496	1.6797	1.2018	2.3358	0.9055	3.1262	1.0709
