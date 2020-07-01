@@ -390,7 +390,7 @@ for j in range(len(lxybins)):
         datacard.write("lumi lnN 1.025 1.0\n")
         # datacard.write("bgnorm lnN 1.00 {}\n".format(background_alphaUp.Integral()/background.Integral()))
         # datacard.write("bgnorm lnN 1.00 1.2\n") 
-        # datacard.write("alpha shapeN2 - 1 uncertainty on background shape and normalization\n")
+        datacard.write("alpha shapeN2 - 1 uncertainty on background shape and normalization\n")
         datacard.close() 
 
         outfile = TFile("simple-shapes-TH1_mass{}_ctau5_Lxy{}_{}_gp.root".format(mass, lxybins[j,0],lxybins[j,1]), "recreate")                                                       
