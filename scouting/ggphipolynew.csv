@@ -1,3 +1,18 @@
  mass	lxy bin	poly order	chi2	ndof	sqrt(sum signalpull**2)	sqrt(sum fiterr**2)	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
  mass	lxy bin	poly order	chi2	ndof	sqrt(sum signalpull**2)	sqrt(sum fiterr**2)	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
  2	1.0 - 3.0	6	0	0	4.06727254183	42.786864496	1.6797	1.2018	2.3358	0.9055	3.1262	1.0709
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ 2	0.1 - 1.0	6	21116.2359121	0	8.125	5.8428	11.2908	4.3799	15.051	8.7386
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ 2	0.0 - 0.1	6	8039.54230669	0	5.0469	3.6293	7.0284	2.7206	9.368	6.6155
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ 2	0.0 - 0.1	6	8039.54230669	0	5.0469	3.6293	7.0284	2.7206	9.368	6.6155
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ 2	1.0 - 3.0	6	849.77413274	0	1.8008	1.295	2.5114	0.9707	3.3539	1.2717

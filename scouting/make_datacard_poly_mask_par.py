@@ -25,13 +25,13 @@ from DataFormats.FWLite import Handle, Events
 mass = "2"
 
 tree_muMC = ROOT.TChain('events')
-tree_muMC.Add("/uscms/home/hroutray/nobackup/CMSSW_10_2_13/src/flat_dimuon_tree_ggPhi_mass{}_ct5_new.root".format(mass))
+tree_muMC.Add("/cms/routray/muon_ntuples_sl7/CMSSW_10_2_5/src/MuonAnalysis/Scouting/condor/flat_dimuon_tree_ggPhi_mass{}_ct5_new.root".format(mass))
 tree_mudata = ROOT.TChain('events')
-tree_mudata.Add("/uscms/home/hroutray/nobackup/CMSSW_10_2_13/src/flatdimuontree_2017and2018_v1.root")
+tree_mudata.Add("/cms/routray/muon_ntuples_sl7/CMSSW_10_2_5/src/MuonAnalysis/Scouting/condor/flatdimuontree_2017and2018_v1.root")
 
 # lxybins = np.array([[0,0.1], [0.1,1], [1,3], [3,7], [7,11]])
  
-lxybins = np.array([[0.1,1.0]])
+lxybins = np.array([[1.0,3.0]])
 #print lxybins[0,0], lxybins[0,1]
 
 ggphipoly = open("ggphipolynew.csv", "a")
@@ -40,8 +40,8 @@ ggphipoly.write(" mass\tlxy bin\tpoly order\tchi2\tndof\tExpected 50.0%: r < \tE
 # outfile = TFile("simple-shapes-TH1_mass0p35_ctau5_Lxy0_1.root", "recreate")
 # outfile.cd()
 
-binwidth = 0.01
-ndecimal = 3
+binwidth = 0.001
+ndecimal = 4
 
 h3 = ROOT.TH1F("h3","h3", int(round(10/binwidth)), 0, 10)
 tree_muMC.Draw('dimuon_mass>>h3','','')
@@ -62,8 +62,8 @@ bins = int(round((xfitup-xfitdown)/binwidth))
 
 print xsigup, xsigdown, xfitup, xfitdown, bins
                                                                                    
-signal = ROOT.TH1F("signal", "Histogram of signal__x", int(bins), float(xfitdown), float(xfitup))
-tree_muMC.Draw('dimuon_mass>>signal','','') 
+signal2 = ROOT.TH1F("signal2", "Histogram of signal__x", int(bins), float(xfitdown), float(xfitup))
+tree_muMC.Draw('dimuon_mass>>signal2','','') 
 
 signal_sigmaUp = ROOT.TH1F("signal_sigmaUp", "Histogram of signal__x", int(bins), float(xfitdown), float(xfitup))
 tree_muMC.Draw('dimuon_mass>>signal_sigmaUp','','')
@@ -100,7 +100,7 @@ mumu/dphimumu)) < 1.25 && distPixel > 0.05 && dimuon_mass > {} && dimuon_mass < 
         # ns = signal1.Integral()
         ns = 100
 
-        signal.Scale(ns/signal.Integral())
+        signal2.Scale(ns/signal2.Integral())
         signal_sigmaUp.Scale(ns/signal_sigmaUp.Integral())
         signal_sigmaDown.Scale(ns/signal_sigmaDown.Integral())
 
@@ -178,7 +178,7 @@ mumu/dphimumu)) < 1.25 && distPixel > 0.05 && dimuon_mass > {} && dimuon_mass < 
 
 	mean = ROOT.RooRealVar("mean","Mean of Gaussian",mu)
         sigma = ROOT.RooRealVar("sigma","Width of Gaussian",sig)
-        signal2 = ROOT.RooGaussian("signal2","signal2",x,mean,sigma)
+        signal = ROOT.RooGaussian("signal","signal",x,mean,sigma)
 
 	nS = ns
 	sig_norm = ROOT.RooRealVar("sig_norm","sig_norm",nS,0,10*nS)
@@ -204,7 +204,7 @@ mumu/dphimumu)) < 1.25 && distPixel > 0.05 && dimuon_mass > {} && dimuon_mass < 
 	result = ROOT.RooFitResult(model.fitTo(data_obs, ROOT.RooFit.Range("R1,R2"), ROOT.RooFit.Save(ROOT.kTRUE), ROOT.RooFit.Minimizer("Minuit2","Migrad")))
         model.fitTo(data_obs,ROOT.RooFit.Range("R1,R2"))
 
-	# chi2 = ROOT.RooChi2Var("chi2","chi2",model,data_obs,ROOT.RooFit.Range("R1,R2"))
+	# chi2 = ROOT.RooChi2Var("chi2","chi2",model,data,ROOT.RooFit.Range("R1,R2"))
 	# m = ROOT.RooMinuit(chi2) 
 	# m.migrad() 
 	# m.improve()
@@ -267,13 +267,13 @@ mumu/dphimumu)) < 1.25 && distPixel > 0.05 && dimuon_mass > {} && dimuon_mass < 
         model.plotOn(xframe2,ROOT.RooFit.LineColor(2),ROOT.RooFit.Components(bkg_component), ROOT.RooFit.Name("bkg"), ROOT.RooFit.LineStyle(1), ROOT.RooFit.Range("Full"), ROOT.RooFit.NormRange("Full"))
 
         xframe2.Draw()
-        xframe2.GetYaxis().SetRangeUser(14800,16000)                                                                                                                                                       
+        xframe2.GetYaxis().SetRangeUser(0,500)                                                                                                                                                       
         xframe2.GetYaxis().SetTitle("Events/ 0.01 GeV")
         xframe2.GetYaxis().SetTitleSize(0.05)
         xframe2.GetYaxis().SetLabelSize(0.045)
         xframe2.GetYaxis().SetTitleOffset(0.95)
 
-	box = ROOT.TBox(float(xsigdown),14800,float(xsigup),16000) 
+	box = ROOT.TBox(float(xsigdown),0,float(xsigup),500) 
 	box.SetFillColorAlpha(7,0.35)
 	box.SetFillStyle(1001)
 	box.Draw()
@@ -337,7 +337,7 @@ mumu/dphimumu)) < 1.25 && distPixel > 0.05 && dimuon_mass > {} && dimuon_mass < 
         datacard.write("jmax 1  number of backgrounds\n")
         datacard.write("kmax *  number of nuisance parameters (sources of systematical uncertainties)\n")
         datacard.write("------------------------------------\n")
-        datacard.write("shapes * * simple-shapes-TH1_mass{}_ctau5_Lxy{}_{}_poly.root $PROCESS $PROCESS_$SYSTEMATIC\n".format(mass, lxybins[j,0],lxybins[j,1]))
+        datacard.write("shapes * * simple-shapes-TH1_mass{}_ctau5_Lxy{}_{}_poly.root myWS:$PROCESS\n".format(mass, lxybins[j,0],lxybins[j,1]))
         datacard.write("------------------------------------\n")
         datacard.write("bin bin1\n")
         datacard.write("observation -1\n")
@@ -350,10 +350,10 @@ mumu/dphimumu)) < 1.25 && distPixel > 0.05 && dimuon_mass > {} && dimuon_mass < 
         datacard.write("lumi lnN 1.025 1.0\n")
         # datacard.write("bgnorm lnN 1.00 {}\n".format(background_alphaUp.Integral()/background.Integral()))
         # datacard.write("bgnorm lnN 1.00 1.2\n") 
-        datacard.write("alpha shapeN2 - 1 uncertainty on background shape and normalization\n")
+        # datacard.write("alpha shapeN2 - 1 uncertainty on background shape and normalization\n")
         datacard.close() 
 
-	myWS.writeToFile("simple-shapes-TH1_mass{}_ctau5_Lxy{}_{}.root".format(mass, lxybins[j,0],lxybins[j,1]))
+	myWS.writeToFile("simple-shapes-TH1_mass{}_ctau5_Lxy{}_{}_poly.root".format(mass, lxybins[j,0],lxybins[j,1]))
         myWS.Print()
         print "RooWorkspace made"
         ROOT.gDirectory.Add(myWS)
