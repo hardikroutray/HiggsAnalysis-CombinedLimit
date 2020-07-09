@@ -22,15 +22,15 @@ ROOT.FWLiteEnabler.enable()
 # load FWlite python libraries                                                                                                       
 from DataFormats.FWLite import Handle, Events
 
-mass = "2"
+mass = "1p5"
 
 tree_muMC = ROOT.TChain('events')
-tree_muMC.Add("~/nobackup/CMSSW_10_2_13/src/flat_dimuon_tree_ggPhi_mass{}_ct0p5_new.root".format(mass))
+tree_muMC.Add("/cms/routray/muon_ntuples_sl7/CMSSW_10_2_5/src/MuonAnalysis/Scouting/condor/flat_dimuon_tree_ggPhi_mass{}_ct50_new.root".format(mass))
 tree_mudata = ROOT.TChain('events')
-tree_mudata.Add("~/nobackup/CMSSW_10_2_13/src/flatdimuontree_2017and2018_v1.root")
+tree_mudata.Add("/cms/routray/muon_ntuples_sl7/CMSSW_10_2_5/src/MuonAnalysis/Scouting/condor/flatdimuontree_2017and2018_v1.root")
 
-#lxybins = np.array([[0,0.1], [0.1,1], [1,3], [3,7], [7,11]]) 
-lxybins = np.array([[0.0,0.1]])
+lxybins = np.array([[0,0.1], [0.1,1], [1,3], [3,7], [7,11]]) 
+#lxybins = np.array([[0.0,0.1]])
 #print lxybins[0,0], lxybins[0,1]
 
 ggphipoly = open("ggphigp_lim.csv", "a")
@@ -39,8 +39,8 @@ ggphipoly.write(" mass\tlxy bin\tgp_kernel_param \tsqrt(sum signalpull**2)\tsqrt
 # outfile = TFile("simple-shapes-TH1_mass0p35_ctau5_Lxy0_1.root", "recreate")
 # outfile.cd()
 
-binwidth = 0.01
-ndecimal = 3
+binwidth = 0.001
+ndecimal = 4
 
 h3 = ROOT.TH1F("h3","h3", int(round(10/binwidth)), 0, 10)
 tree_muMC.Draw('dimuon_mass>>h3','','')
@@ -88,6 +88,7 @@ for j in range(len(lxybins)):
         print "Looking at lxy bin----------",lxybins[j,0], "-", lxybins[j,1], "----------------"   
 
         signal1 = ROOT.TH1F("signal1", "signal1", int(bins), float(xfitdown), float(xfitup))
+
 	# tree_muMC.Draw('dimuon_mass>>signal1',"lxy > {} && lxy < {} && muon1_trkiso < 0.1 && muon2_trkiso < 0.1 && dRmuon1jet > 0.3 && dRmuon2jet> 0.3 && abs(dphidimudv) < 0.02 && log(abs(detamumu/dphimumu)) < 1.25 && distPixel > 0.05 && dimuon_mass > {} && dimuon_mass < {}".format(lxybins[j,0], lxybins[j,1], xfitdown, xfitup), '')                                                                                 
 	tree_muMC.Draw('dimuon_mass>>signal1',"lxy > {} && lxy < {} && muon1_trkiso < 0.1 && muon2_trkiso < 0.1 && dRmuon1jet > 0.3 && dRmuon2jet> 0.3 && abs(dphidimudv) < 0.02 && log(abs(detamumu/dphimumu)) < 1.25 && distPixel > 0.05 && dimuon_mass > {} && dimuon_mass < {}".format(0.1, 11, xfitdown, xfitup), '')      
         

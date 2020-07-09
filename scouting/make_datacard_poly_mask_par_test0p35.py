@@ -187,15 +187,26 @@ mumu/dphimumu)) < 1.25 && distPixel > 0.05 && dimuon_mass > {} && dimuon_mass < 
         p1 =  ROOT.RooRealVar("p1","p1",1,-10000000,10000000)
         p2 =  ROOT.RooRealVar("p2","p2",1,-10000000,10000000)
         p3 =  ROOT.RooRealVar("p3","p3",1,-10000000,10000000)
-        p4 =  ROOT.RooRealVar("p4","p4",1,-10000000,10000000)
-        p5 =  ROOT.RooRealVar("p5","p5",1,-10000000,10000000)
-        p6 =  ROOT.RooRealVar("p6","p6",1,-10000000,10000000)
+        # p4 =  ROOT.RooRealVar("p4","p4",1,-10000000,10000000)
+        # p5 =  ROOT.RooRealVar("p5","p5",1,-10000000,10000000)
+        # p6 =  ROOT.RooRealVar("p6","p6",1,-10000000,10000000)
+
+
+        # p0 =  ROOT.RooRealVar("p0","p0",1000,-10000000,10000000)                                                                                                                                         
+        # p1 =  ROOT.RooRealVar("p1","p1",-1000,-10000000,10000000)                                                                                                                                        
+        # p2 =  ROOT.RooRealVar("p2","p2",-1000,-10000000,10000000)                                                                                                                                        
+        # p3 =  ROOT.RooRealVar("p3","p3",-1000,-10000000,10000000)                                                                                                                                        
+        # p4 =  ROOT.RooRealVar("p4","p4",-1000,-10000000,10000000)                                                                                                                                        
+        # p5 =  ROOT.RooRealVar("p5","p5",20000,-10000000,10000000)                                                                                                                                        
+        # p6 =  ROOT.RooRealVar("p6","p6",100000,-10000000,10000000)                                                                                                                                       
+
+
 
         # background = ROOT.RooGenericPdf("background","background","p0 + p1*pow(x,1) + p2*pow(x,2) + p3*pow(x,3) + p4*pow(x,4) + p5*pow(x,5) + p6*pow(x,6)",ROOT.RooArgSet(x,p0,p1,p2,p3,p4,p5,p6))
-        background = ROOT.RooPolynomial("background","background", x, ROOT.RooArgList(p0,p1,p2,p3,p4,p5,p6))
+        # background = ROOT.RooPolynomial("background","background", x, ROOT.RooArgList(p0,p1,p2,p3,p4))
 	# background = ROOT.RooChebychev("background","background", x, ROOT.RooArgList(p0,p1,p2,p3,p4,p5,p6))
-	# background = ROOT.RooBernstein("background","background", x, ROOT.RooArgList(p0,p1,p2,p3,p4,p5,p6))
-
+	background = ROOT.RooBernstein("background","background", x, ROOT.RooArgList(p0,p1,p2,p3))
+  
 	nB = data.Integral()
 	background_norm = ROOT.RooRealVar("background_norm","background_norm",nB,0.9*nB,1.1*nB)
 	# background.fitTo(data_obs, ROOT.RooFit.Range("R1,R2"))

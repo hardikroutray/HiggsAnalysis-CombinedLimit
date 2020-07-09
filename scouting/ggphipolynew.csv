@@ -16,3 +16,17 @@
  2	0.0 - 0.1	6	8039.54230669	0	5.0469	3.6293	7.0284	2.7206	9.368	6.6155
  mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
  2	1.0 - 3.0	6	849.77413274	0	1.8008	1.295	2.5114	0.9707	3.3539	1.2717
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ 0p35	0.0 - 0.1	6	2.6541008396	0	0.4365	0.3118	0.6157	0.2319	0.8326	0.1306
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ 0p35	0.0 - 0.1	6	0.935655252928	0	0.4512	0.3206	0.6355	0.2397	0.8585	0.3955
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ 0p35	0.0 - 0.1	6	0.935655252928	0	0.4512	0.3206	0.6355	0.2397	0.8585	0.3955
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ 0p35	0.0 - 0.1	6	2.40761726879	0	0.4434	0.314	0.628	0.2338	0.8517	0.3549
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ 0p35	0.0 - 0.1	6	17.117336255	0	0.4746	0.3402	0.6666	0.254	0.8972	0.4323
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ mass	lxy bin	poly order	chi2	ndof	Expected 50.0%: r < 	Expected 16.0%: r < 	Expected 84.0%: r < 	Expected 2.5%: r < 	Expected 97.5%: r < 	Observed Limit
+ 0p35	0.0 - 0.1	6	40.6802145251	0	0.457	0.3265	0.6428	0.2428	0.8675	0.4028
